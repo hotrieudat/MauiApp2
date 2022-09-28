@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MauiApp2.View;
 using System.Collections.ObjectModel;
 
 namespace MauiApp2.ViewModel
@@ -35,5 +36,10 @@ namespace MauiApp2.ViewModel
             }
         }
 
+        [RelayCommand]
+        async Task Tab(string s)
+        {
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?TextId={s}");
+        }
     }
 }
